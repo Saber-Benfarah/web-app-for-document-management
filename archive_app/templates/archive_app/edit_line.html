@@ -1,0 +1,11 @@
+<!-- archive_app/templates/archive_app/edit_line.html -->
+{% extends 'archive_app/base.html' %}
+{% block title %}Modifier ligne{% endblock %}
+{% block content %}
+<h2>Modifier une ligne</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save-btn">💾 Update</button>
+</form>
+{% endblock %}

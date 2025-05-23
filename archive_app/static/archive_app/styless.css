@@ -1,0 +1,87 @@
+/* archive_app/static/archive_app/style.css */
+
+body {
+    background-color: #c2aff0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: #8e73ce;
+    padding: 10px;
+}
+
+.menu-btn {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    background: #5a4ba2;
+    border-radius: 5px;
+}
+
+.logout {
+    background: #e94e77;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.login-box {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-btn {
+    background: #0592f5;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #999;
+    padding: 8px;
+    text-align: center;
+}
+
+.save-btn, .add-btn, .btn-edit {
+    background: #0592f5;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-primary, .btn-success {
+    background: #337fb6;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}

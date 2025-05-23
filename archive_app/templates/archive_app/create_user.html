@@ -1,0 +1,11 @@
+<!-- archive_app/templates/archive_app/create_user.html -->
+{% extends 'archive_app/base.html' %}
+{% block title %}Création des utilisateurs{% endblock %}
+{% block content %}
+<h2>Créer un utilisateur</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="add-btn">ADD</button>
+</form>
+{% endblock %}

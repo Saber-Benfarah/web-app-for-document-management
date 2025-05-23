@@ -1,0 +1,11 @@
+<!-- archive_app/templates/archive_app/edit_user.html -->
+{% extends 'archive_app/base.html' %}
+{% block title %}Modification des utilisateurs{% endblock %}
+{% block content %}
+<h2>Modifier utilisateur</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save-btn">Save</button>
+</form>
+{% endblock %}

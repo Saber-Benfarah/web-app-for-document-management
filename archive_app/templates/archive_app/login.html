@@ -1,0 +1,15 @@
+<!-- archive_app/templates/archive_app/login.html -->
+{% extends 'archive_app/base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="login-box">
+    <h2>documents Archives</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.username.label_tag }} {{ form.username }}
+        {{ form.branch.label_tag }} {{ form.branch }}
+        {{ form.password.label_tag }} {{ form.password }}
+        <button type="submit" class="login-btn">🔓 Login</button>
+    </form>
+</div>
+{% endblock %}

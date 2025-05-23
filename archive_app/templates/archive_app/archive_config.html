@@ -1,0 +1,13 @@
+<!-- archive_app/templates/archive_app/archive_config.html -->
+{% extends 'archive_app/base.html' %}
+{% block title %}Paramétrage d'archives{% endblock %}
+{% block content %}
+<h2>Paramétrage des archives</h2>
+<table class="data-table">
+    <!-- Display archive configuration data or render ArchiveForm dynamically -->
+</table>
+<a href="{% url 'add_line' %}" class="add-btn">➕ Add Line</a>
+<br><br><br>
+<a href="{% url 'upload_csv' %}" class="btn-primary">Importer CSV</a>
+
+{% endblock %}

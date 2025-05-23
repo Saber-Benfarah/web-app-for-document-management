@@ -1,0 +1,51 @@
+<!-- archive_app/templates/archive_app/consultation.html -->
+{% extends 'archive_app/base.html' %}
+{% block title %}Tableau de consultations{% endblock %}
+{% block content %}
+<h2>Tableau de consultations</h2>
+<table class="data-table">
+    <tr>
+        <th>N° Dossier</th>
+        <th>Colonne</th>
+        <th>Étage</th>
+        <th>Rayon</th>
+        <th>Site</th>
+        <th>Fournisseur</th>
+        <th>Contact</th>
+        <th>Fonction</th>
+        <th>Mobile</th>
+        <th>Tél fixe</th>
+        <th>Email</th>
+        <th>Domaine</th>
+        <th>Spécialité</th>
+        <th>Provenance</th>
+        <th>Obs</th>
+        <th>Actions</th>
+    </tr>
+    {% for archive in archives %}
+    <tr>
+        <td>{{ archive.dossier_number }}</td>
+            <td>{{ archive.colonne }}</td>
+            <td>{{ archive.etage }}</td>
+            <td>{{ archive.rayon }}</td>
+            <td>{{ archive.site }}</td>
+            <td>{{ archive.nom_fournisseur }}</td>
+            <td>{{ archive.contact }}</td>
+            <td>{{ archive.fonction }}</td>
+            <td>{{ archive.mobile }}</td>
+            <td>{{ archive.tel_fixe }}</td>
+            <td>{{ archive.email }}</td>
+            <td>{{ archive.domaine }}</td>
+            <td>{{ archive.specialite }}</td>
+            <td>{{ archive.provenance }}</td>
+            <td>{{ archive.observation }}</td>
+        <td>
+            <a href="{% url 'edit_line' archive.id %}" class="btn-edit">✏️ Modifier</a><br>
+            <a href="{% url 'download_csv' %}" class="btn-success">Exporter CSV</a><br>
+            <a href="{% url 'delete_line' archive.id %}" onclick="return confirm('Are you sure you want to delete this archive?');">Delete</a>
+
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!-- 
+  ------------------------------------------------------------------------------
+  Author: Saber Benafah
+  Profession: Computer Scientist
+  Description: I created this entire archive app from scratch, including UI.
+  ------------------------------------------------------------------------------
+-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Archive Management{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'archive_app/style.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        {% if user.is_authenticated %}
+            <a href="{% url 'home' %}" class="menu-btn">🏠 Accueil</a>
+            <a href="{% url 'consultation' %}" class="menu-btn">❓ Tableau de consultations</a>
+            <a href="{% url 'archive_config' %}" class="menu-btn">⚙️ Paramétrage d'archives</a>
+            <a href="{% url 'list_users' %}" class="menu-btn">📋 Liste des utilisateurs</a>
+            <a href="{% url 'create_user' %}" class="menu-btn">👥 Creation des utilisateurs</a>
+            <a href="{% url 'logout' %}" class="menu-btn logout">🔒 Logout</a>
+        {% endif %}
+    </div>
+    
+    <div class="content">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "archive_app/base.html" %}
+{% block content %}
+<h2>Importer des Archives (CSV)</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Importer</button>
+</form>
+
+<!--a href="{% url 'download_csv' %}">Télécharger les archives (CSV)</a>-->
+{% endblock %}
